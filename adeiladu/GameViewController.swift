@@ -15,6 +15,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let legoUnit = CGFloat(1.6)
+        let brickHeight = legoUnit * 6
+        //let studHeight = legoUnit
+        let brickWidth = legoUnit * 10
+        
         // create a new scene
         let scene = SCNScene()
         
@@ -26,7 +31,7 @@ class GameViewController: UIViewController {
         // place the camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
         
-        let firstLegoCube = SCNBox(width: 15.8, height: 9.6, length: 15.8, chamferRadius: 0.1)
+        let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 1.0)
         let firstLegoNode = SCNNode(geometry: firstLegoCube)
         firstLegoNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(firstLegoNode);
