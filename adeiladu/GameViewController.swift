@@ -29,9 +29,9 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
         
-        let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 1.0)
+        let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 0)
         let firstLegoNode = SCNNode(geometry: firstLegoCube)
         firstLegoNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(firstLegoNode);
