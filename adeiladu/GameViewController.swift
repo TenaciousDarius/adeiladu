@@ -40,6 +40,11 @@ class GameViewController: UIViewController {
         ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
         
+        let firstLegoCube = SCNBox(width: 15.8, height: 9.6, length: 15.8, chamferRadius: 0.1)
+        let firstLegoNode = SCNNode(geometry: firstLegoCube)
+        firstLegoNode.position = SCNVector3(x: 0, y: 0, z: 0)
+        scene.rootNode.addChildNode(firstLegoNode);
+        
         // retrieve the SCNView
         let scnView = self.view as! SCNView
         
