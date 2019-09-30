@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
         // place the camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
         
-        let firstLegoNode = SCNNode(geometry: legoBrick())
+        let firstLegoNode = legoBrick()
         firstLegoNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(firstLegoNode);
         
@@ -49,14 +49,55 @@ class GameViewController: UIViewController {
         scnView.addGestureRecognizer(tapGesture)
     }
     
-    func legoBrick() -> SCNGeometry {
+    func legoBrick() -> SCNNode {
         let legoUnit = CGFloat(1.6)
         let brickHeight = legoUnit * 6
-        //let studHeight = legoUnit
         let brickWidth = legoUnit * 10
+        let studHeight = legoUnit
+        let studWidth = legoUnit * 3
+        let studX = Float(brickWidth * 0.25)
+        let studY = Float((brickHeight / 2) + (studHeight / 2))
+        let studZ = Float(brickWidth * -0.25)
         
+        
+        let firstLegoNode = SCNNode()
+    
         let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 0)
-        return firstLegoCube
+        firstLegoNode.addChildNode(SCNNode(geometry: firstLegoCube))
+        
+        let firstLegoStudNode = SCNNode(geometry: SCNCylinder(radius: studWidth / 2.0, height: studHeight))
+        firstLegoStudNode.position = SCNVector3Make(
+            studX,
+            studY,
+            studX
+        )
+        firstLegoNode.addChildNode(firstLegoStudNode)
+        
+        let secondLegoStudNode = SCNNode(geometry: SCNCylinder(radius: studWidth / 2.0, height: studHeight))
+        secondLegoStudNode.position = SCNVector3Make(
+            studX,
+            studY,
+            studZ
+        )
+        firstLegoNode.addChildNode(secondLegoStudNode)
+        
+        let thirdLegoStudNode = SCNNode(geometry: SCNCylinder(radius: studWidth / 2.0, height: studHeight))
+        thirdLegoStudNode.position = SCNVector3Make(
+            studZ,
+            studY,
+            studX
+        )
+        firstLegoNode.addChildNode(thirdLegoStudNode)
+        
+        let fourthLegoStudNode = SCNNode(geometry: SCNCylinder(radius: studWidth / 2.0, height: studHeight))
+        fourthLegoStudNode.position = SCNVector3Make(
+            studZ,
+            studY,
+            studZ
+        )
+        firstLegoNode.addChildNode(fourthLegoStudNode)
+        
+        return firstLegoNode
     }
     
     @objc
