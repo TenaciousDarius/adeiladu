@@ -15,11 +15,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let legoUnit = CGFloat(1.6)
-        let brickHeight = legoUnit * 6
-        //let studHeight = legoUnit
-        let brickWidth = legoUnit * 10
-        
         // create a new scene
         let scene = SCNScene()
         
@@ -31,8 +26,7 @@ class GameViewController: UIViewController {
         // place the camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 25)
         
-        let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 0)
-        let firstLegoNode = SCNNode(geometry: firstLegoCube)
+        let firstLegoNode = SCNNode(geometry: legoBrick())
         firstLegoNode.position = SCNVector3(x: 0, y: 0, z: 0)
         scene.rootNode.addChildNode(firstLegoNode);
         
@@ -53,6 +47,16 @@ class GameViewController: UIViewController {
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         scnView.addGestureRecognizer(tapGesture)
+    }
+    
+    func legoBrick() -> SCNGeometry {
+        let legoUnit = CGFloat(1.6)
+        let brickHeight = legoUnit * 6
+        //let studHeight = legoUnit
+        let brickWidth = legoUnit * 10
+        
+        let firstLegoCube = SCNBox(width: brickWidth, height:brickHeight, length: brickWidth, chamferRadius: 0)
+        return firstLegoCube
     }
     
     @objc
