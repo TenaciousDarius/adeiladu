@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2650761E233AA88F00340E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2650761D233AA88F00340E9C /* AppDelegate.swift */; };
-		26507620233AA88F00340E9C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2650761F233AA88F00340E9C /* art.scnassets */; };
 		26507622233AA88F00340E9C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26507621233AA88F00340E9C /* GameViewController.swift */; };
 		26507625233AA88F00340E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26507623233AA88F00340E9C /* Main.storyboard */; };
 		26507627233AA89000340E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26507626233AA89000340E9C /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		2650761A233AA88F00340E9C /* adeiladu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adeiladu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2650761D233AA88F00340E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2650761F233AA88F00340E9C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		26507621233AA88F00340E9C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		26507624233AA88F00340E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26507626233AA89000340E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				2650761D233AA88F00340E9C /* AppDelegate.swift */,
-				2650761F233AA88F00340E9C /* art.scnassets */,
 				26507621233AA88F00340E9C /* GameViewController.swift */,
 				26507623233AA88F00340E9C /* Main.storyboard */,
 				26507626233AA89000340E9C /* Assets.xcassets */,
@@ -232,7 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26507620233AA88F00340E9C /* art.scnassets in Resources */,
 				2650762A233AA89000340E9C /* LaunchScreen.storyboard in Resources */,
 				26507627233AA89000340E9C /* Assets.xcassets in Resources */,
 				26507625233AA88F00340E9C /* Main.storyboard in Resources */,
@@ -445,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenaciousdarius.adeiladu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -462,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenaciousdarius.adeiladu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
